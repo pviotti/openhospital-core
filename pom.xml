@@ -157,6 +157,12 @@
 
 	<dependencies>
 		<dependency>
+	  		<groupId>com.h2database</groupId>
+	  		<artifactId>h2</artifactId>
+	  	  	<version>1.4.190</version>
+		  	<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.googlecode.gstreamer-java</groupId>
 			<artifactId>gstreamer-java</artifactId>
 			<version>1.4</version>
@@ -347,13 +353,13 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<repositories>
+ 	<repositories>
 		<repository>
 			<id>lib</id>
 			<name>Legacy dependencies Repository</name>
 			<url>file:${project.basedir}/repo</url>
 		</repository>
-		<repository>
+ 		<repository>
 			<id>spring-libs-release</id>
 			<name>Spring Releases</name>
 			<url>https://repo.spring.io/libs-release</url>
