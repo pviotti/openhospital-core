@@ -1,9 +1,12 @@
-FROM mysql:5.6
+FROM mysql:8
 
 ENV MYSQL_DATABASE=oh
 ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_USER=isf
 ENV MYSQL_PASSWORD=isf123
+
+RUN sed -i '/^\[mysqld\]$/a\local-infile=1' /etc/mysql/my.cnf
+RUN rm -rf /var/lib/mysql/*
 
 #COPY mysql/db/step_00_create_user.sql /docker-entrypoint-initdb.d/
 COPY mysql/db/step_01_create_structure.sql /docker-entrypoint-initdb.d/
